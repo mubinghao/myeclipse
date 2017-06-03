@@ -76,3 +76,23 @@ public class ShowZhunbeichukuDaoImpl implements ShowZhunbeichukuDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+
+import com.dao.show.ShowZhunbeichukuDao;
+import com.dao.show.ShowZhunbeichukuDaoImpl;
+import com.entity.Zhunbeichukudata;
+
+public class ShowZhunbeichukuServiceImpl implements ShowZhunbeichukuService {
+
+	ShowZhunbeichukuDao dao = new ShowZhunbeichukuDaoImpl();
+	public List<Zhunbeichukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+
+}
+
