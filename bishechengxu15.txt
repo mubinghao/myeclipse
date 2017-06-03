@@ -48,3 +48,30 @@ public class Fenduanchukudata {
 	
 }
 
+package com.dao.show;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.entity.Fenduanchukudata;
+
+import com.util.JdbcUtil;
+
+public class ShowFenduanchukuDaoImpl implements ShowFenduanchukuDao {
+
+	public List<Fenduanchukudata> showData(String tablename) {
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			String sql = "SELECT * FROM "+tablename+" where amount !=0 ";
+			return (List<Fenduanchukudata>)qr.query(sql, new BeanListHandler(Fenduanchukudata.class));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+
+}
+
