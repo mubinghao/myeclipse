@@ -70,3 +70,30 @@ public class Bulkheadchukudata {
 	
 }
 
+package com.dao.show;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.entity.Bulkheadchukudata;
+
+import com.util.JdbcUtil;
+
+public class ShowBulkheadchukuDaoImpl implements ShowBulkheadchukuDao {
+
+	public List<Bulkheadchukudata> showData(String tablename) {
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			String sql = "SELECT * FROM "+tablename+" ";
+			return (List<Bulkheadchukudata>)qr.query(sql, new BeanListHandler(Bulkheadchukudata.class));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+
+}
+
