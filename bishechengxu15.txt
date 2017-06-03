@@ -157,3 +157,142 @@ public class ShowFenduanchukuServlet extends HttpServlet {
 
 }
 
+ <%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>信息查看 </title>
+<h1 align="center">查看信息</h1>
+</head>
+	<style type="text/css">
+         .clear{color:red;
+        }
+</style>
+<body background="D:\code\Work\WebRoot\jsp\tiexianjue-001.jpg">
+<form id="queryForm" action="${pageContext.request.contextPath }/ShowFenduanchukuServlet?tablename=fenduan_view_chuku" method="post">
+ 		<%--当前页 --%>
+  		<input type="hidden" id="currentPage" name="currentPage" value="${pageBean.currentPage }"/>
+  		<%--每页显示记录数 --%>
+  		<input type="hidden" id="pageSizeId" name="pageSize" value="${pageBean.pageSize }"/>
+
+  </form>
+	<table>
+		<table border="1" align="center" width="1000px" cellspacing ="0px">
+		<tr>
+			<th class="clear">分段号</th>
+    	 	<th>数量</th>
+    	 	<th>名称</th>
+    	 	
+    	 </tr>
+    	  <c:forEach items="${feclist}" var="Fenduanchukudata">
+    	  <tr>
+    	  	<td class="clear" align="center" >${Fenduanchukudata.seno}</td>
+    	 	<td  align="center" >${Fenduanchukudata.amount}</td>
+    	 	<td  align="center" >${Fenduanchukudata.zhname}</td>
+   
+    	 </tr>
+    	 </c:forEach>
+    	 <tr>
+    	 	<td align="center" colspan="10">
+    	 	<%--
+    	 	需求： 
+    	 		1） 如果当前页是首页，那么不能点击 首页 和 上一页，否则可以点击
+    	 		2) 如果当前页是末页，那么不能点击 下一页 和 末页，否则可以点击
+    	 	 --%>
+    	 	 <c:choose>
+    	 	 	<c:when test="${pageBean.totalPage==0}">
+    	 	 		
+    	 	 		首页&nbsp;上一页下一页&nbsp;末页
+    	 	 	</c:when>
+    	 	 	<c:otherwise>
+    	 	 		 <c:choose>
+	    	 	 	<c:when test="${pageBean.currentPage==pageBean.firstPage}">
+	    	 	 		首页&nbsp;
+	    	 	 		上一页
+	    	 	 	</c:when>
+	    	 	 	<c:otherwise>
+	    	 			<a href="javascript:void(0)" onclick="toPage('${pageBean.firstPage}')">首页</a>&nbsp;
+	    	 			<a href="javascript:void(0)" onclick="toPage('${pageBean.prePage}')">上一页</a>&nbsp;
+	    	 	 	</c:otherwise>
+	    	 	 </c:choose>
+	    	 	 
+	    	 	 <c:choose>
+	    	 	 	<c:when test="${pageBean.currentPage==pageBean.totalPage}">
+	    	 	 		下一页&nbsp;
+	    	 	 		末页
+	    	 	 	</c:when>
+	    	 	 	<c:otherwise>
+	
+	    	 			<a href="javascript:void(0)" onclick="toPage('${pageBean.nextPage}')">下一页</a>&nbsp;
+	    	 			<a href="javascript:void(0)" onclick="toPage('${pageBean.totalPage}')">末页</a>&nbsp;
+	    	 			
+	    	 	 	</c:otherwise>
+	    	 	 </c:choose>
+    	 	 	</c:otherwise>
+    	 	 </c:choose>
+    	 		当前为第${pageBean.currentPage}页/共${pageBean.totalPage }页&nbsp;
+    	 		共${pageBean.totalCount}条数据&nbsp;
+    	 		每页显示 <input type="text" size="2" id="pageSize" value="${pageBean.pageSize}" onblur="changePageSize()"/> 条&nbsp;
+    	 		跳转到第<input type="text" id="curPage" size="2" onblur="changePage()"/>页
+    	 		<input type="submit" >
+    	 	</td>
+    	 </tr>
+		</table>
+</body>
+
+ <script type="text/javascript">
+  	/*改变每页显示记录数*/
+  	function changePageSize(){
+  		//1.得到用户输入
+  		var pageSize = document.getElementById("pageSize").value;
+  		//判断规则：只能输入1-2个的数字
+  		var reg = /^[1-9][0-9]?$/;
+  		if(!reg.test(pageSize)){
+  			alert("只能输入1-2位的数字");
+  			return;
+  		}
+  		//2.请求ListEmpServlet，同时发送参数(pageSize)
+  		/*var url = "${pageContext.request.contextPath}/AdminServlet?action=showFarmer&pageSize="+pageSize;
+  		window.location.href=url;*/
+  		//提交表单,同时发送参数(pageSize)
+  		document.getElementById("pageSizeId").value=pageSize;
+  		var queryForm = document.getElementById("queryForm");
+  		queryForm.submit();//提交表单
+  	}
+  	
+  	/*跳转页面*/
+  	function changePage(){
+  		var curPage = document.getElementById("curPage").value;
+  		var reg = /^[1-9][0-9]?$/;
+  		if(!reg.test(curPage)){
+  			alert("只能输入1-2位的非零数字");
+  			return;
+  		}
+  		/*如果输入的页码大于等于总页数*/
+  		var totalPage = "${pageBean.totalPage}";
+  		if(curPage>totalPage){
+  			alert("已经超过总页数");
+  			return;
+  		}
+  		
+  		/*var url = "${pageContext.request.contextPath}/AdminServlet?action=showFarmer&currentPage="+curPage+"&pageSize=${pageBean.pageSize}";
+  		window.location.href=url;*/
+  		document.getElementById("currentPage").value=curPage;
+  		var queryForm = document.getElementById("queryForm");
+  		queryForm.submit();//提交表单
+  	}
+  	
+  //提交查询表单
+  	function toPage(pageNo){
+  		//提交之前，把当前页设置跳转到页码
+  		 document.getElementById("currentPage").value = pageNo;
+  		//提交表单
+  		var queryForm = document.getElementById("queryForm");
+  		queryForm.submit();
+  	}
+  
+ </script>
+</html>
