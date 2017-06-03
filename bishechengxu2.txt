@@ -1,0 +1,50 @@
+package com.entity;
+
+public class Deckdata {
+	
+	private String deno;
+	private String amount;
+	private String dename;
+	
+	public Deckdata(String deno,String amount,String dename){
+		super();
+		this.deno=deno;
+		this.amount=amount;
+		this.dename=dename;
+	}
+	
+	public Deckdata(){
+		super();
+	}
+	
+	public String getDeno() {
+		return deno;
+	}
+
+	public void setDeno(String deno) {
+		this.deno = deno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getDename() {
+		return dename;
+	}
+
+	public void setDename(String dename) {
+		this.dename = dename;
+	}
+	
+	@Override
+	public String toString() {
+		return "Deck [deno=" + deno + ", amount=" + amount + ", dename="
+				+ dename + "]";
+	}
+}
+
