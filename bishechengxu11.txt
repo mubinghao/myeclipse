@@ -1,0 +1,72 @@
+package com.entity;
+
+public class Bulkheadchukudata {
+
+	private String cktime;
+	private String ckperson;
+	private String buno;
+	private String amount;
+	private String buname;
+	
+	public Bulkheadchukudata(String cktime,String ckperson,String buno,String amount,String buname){
+		super();
+		this.cktime=cktime;
+		this.ckperson=ckperson;
+		this.buno=buno;
+		this.amount=amount;
+		this.buname=buname;
+	}
+	
+	public Bulkheadchukudata(){
+		super();
+	}
+
+	public String getCktime() {
+		return cktime;
+	}
+
+	public void setCktime(String cktime) {
+		this.cktime = cktime;
+	}
+
+	public String getCkperson() {
+		return ckperson;
+	}
+
+	public void setCkperson(String ckperson) {
+		this.ckperson = ckperson;
+	}
+
+	public String getBuno() {
+		return buno;
+	}
+
+	public void setBuno(String buno) {
+		this.buno = buno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getBuname() {
+		return buname;
+	}
+
+	public void setBuname(String buname) {
+		this.buname = buname;
+	}
+
+	@Override
+	public String toString() {
+		return "Bulkhead_view_chuku [cktime=" + cktime + ", ckperson=" + ckperson
+				+ ", buno=" + buno + ", amount=" + amount + ", buname="
+				+ buname + "]";
+	}
+	
+}
+
