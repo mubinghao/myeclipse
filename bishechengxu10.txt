@@ -123,3 +123,21 @@ public class ShowDeckchukuDaoImpl implements ShowDeckchukuDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowDeckchukuDao;
+import com.dao.show.ShowDeckchukuDaoImpl;
+import com.entity.Deckchukudata;
+
+
+public class ShowDeckchukuServiceImpl implements ShowDeckchukuService {
+
+	ShowDeckchukuDao dao = new ShowDeckchukuDaoImpl();
+	public List<Deckchukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+}
+
