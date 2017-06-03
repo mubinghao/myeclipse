@@ -48,3 +48,30 @@ public class Deckdata {
 	}
 }
 
+
+package com.dao.show;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.entity.Deckdata;
+import com.util.JdbcUtil;
+
+public class ShowDeckDaoImpl implements ShowDeckDao {
+
+	public List<Deckdata> showData(String tablename) {
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			String sql = "SELECT * FROM "+tablename+" ";
+			return (List<Deckdata>)qr.query(sql, new BeanListHandler(Deckdata.class));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+
+}
+
