@@ -95,3 +95,22 @@ public class ShowBottomchukuDaoImpl implements ShowBottomchukuDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowBottomchukuDao;
+import com.dao.show.ShowBottomchukuDaoImpl;
+import com.entity.Bottomchukudata;
+
+
+public class ShowBottomchukuServiceImpl implements ShowBottomchukuService {
+
+	ShowBottomchukuDao dao = new ShowBottomchukuDaoImpl();
+	public List<Bottomchukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
