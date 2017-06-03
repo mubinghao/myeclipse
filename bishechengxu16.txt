@@ -78,3 +78,24 @@ public class ShowShejizhunbeiDaoImpl implements ShowShejizhunbeiDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowShejizhunbeiDao;
+import com.dao.show.ShowShejizhunbeiDaoImpl;
+import com.dao.show.ShowZhunbeichukuDao;
+import com.dao.show.ShowZhunbeichukuDaoImpl;
+import com.entity.Shejizhunbeidata;
+import com.entity.Zhunbeichukudata;
+
+public class ShowShejizhunbeiServiceImpl implements ShowShejizhunbeiService {
+
+	ShowShejizhunbeiDao dao = new ShowShejizhunbeiDaoImpl();
+	public List<Shejizhunbeidata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
