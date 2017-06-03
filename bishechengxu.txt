@@ -69,3 +69,22 @@ public class ShowDataDaoImpl implements ShowDataDao {
 		}
 	}
 }
+
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowDataDao;
+import com.dao.show.ShowDataDaoImpl;
+import com.entity.Alltabledata;
+
+public class ShowDataServiceImpl implements ShowDataService {
+
+	ShowDataDao dao = new ShowDataDaoImpl();
+	public List<Alltabledata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
