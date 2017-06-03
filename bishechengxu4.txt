@@ -69,3 +69,21 @@ public class ShowBottomDaoImpl implements ShowBottomDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowBottomDao;
+import com.dao.show.ShowBottomDaoImpl;
+import com.entity.Bottomdata;
+
+public class ShowBottomServiceImpl implements ShowBottomService {
+
+	ShowBottomDao dao = new ShowBottomDaoImpl();
+	public List<Bottomdata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+}
+
