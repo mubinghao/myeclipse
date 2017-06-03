@@ -72,3 +72,22 @@ public class ShowBroadsideDaoImpl implements ShowBroadsideDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowBroadsideDao;
+import com.dao.show.ShowBroadsideDaoImpl;
+import com.entity.Broadsidedata;
+
+public class ShowBroadsideServiceImpl implements ShowBroadsideService {
+	
+	ShowBroadsideDao dao = (ShowBroadsideDao) new ShowBroadsideDaoImpl();
+	public List<Broadsidedata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
