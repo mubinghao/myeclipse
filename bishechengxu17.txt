@@ -72,3 +72,22 @@ public class ShowChuangxinzhunbeiDaoImpl implements ShowChuangxinzhunbeiDao {
 	}
 }
 
+package com.service.show;
+
+import java.util.List;
+
+
+import com.dao.show.ShowChuangxinzhunbeiDao;
+import com.dao.show.ShowChuangxinzhunbeiDaoImpl;
+
+import com.entity.Chuangxinzhunbeidata;
+
+public class ShowChuangxinzhunbeiServiceImpl implements ShowChuangxinzhunbeiService {
+
+	ShowChuangxinzhunbeiDao dao = new ShowChuangxinzhunbeiDaoImpl();
+	public List<Chuangxinzhunbeidata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+}
+
