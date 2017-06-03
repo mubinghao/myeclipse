@@ -66,3 +66,22 @@ public class ShowBulkheadrukuDaoImpl implements ShowBulkheadrukuDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+import com.dao.show.ShowBulkheadrukuDao;
+import com.dao.show.ShowBulkheadrukuDaoImpl;
+import com.entity.Bulkheadrukudata;
+
+public class ShowBulkheadrukuServiceImpl implements ShowBulkheadrukuService {
+
+	ShowBulkheadrukuDao dao = (ShowBulkheadrukuDao) new ShowBulkheadrukuDaoImpl();
+	public List<Bulkheadrukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+
+}
+
