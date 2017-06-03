@@ -75,3 +75,24 @@ public class ShowFenduanchukuDaoImpl implements ShowFenduanchukuDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowFenduanchukuDao;
+import com.dao.show.ShowFenduanchukuDaoImpl;
+import com.dao.show.ShowZhunbeichukuDao;
+import com.dao.show.ShowZhunbeichukuDaoImpl;
+import com.entity.Fenduanchukudata;
+import com.entity.Zhunbeichukudata;
+
+public class ShowFenduanchukuServiceImpl implements ShowFenduanchukuService {
+
+	ShowFenduanchukuDao dao = new ShowFenduanchukuDaoImpl();
+	public List<Fenduanchukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
