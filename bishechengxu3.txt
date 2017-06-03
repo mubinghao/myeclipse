@@ -68,3 +68,22 @@ public class ShowBulkheadDaoImpl implements ShowBulkheadDao {
 	}
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowBulkheadDao;
+import com.dao.show.ShowBulkheadDaoImpl;
+import com.entity.Bulkheaddata;
+
+public class ShowBulkheadServiceImpl implements ShowBulkheadService {
+
+	ShowBulkheadDao dao = new ShowBulkheadDaoImpl();
+	public List<Bulkheaddata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
