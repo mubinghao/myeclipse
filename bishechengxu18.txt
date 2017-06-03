@@ -48,3 +48,29 @@ public class Shiyanfenduandata {
 
 }
 
+package com.dao.show;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import com.entity.Shiyanfenduandata;
+import com.util.JdbcUtil;
+
+public class ShowShiyanfenduanDaoImpl implements ShowShiyanfenduanDao {
+
+	public List<Shiyanfenduandata> showData(String tablename) {
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			String sql = "SELECT * FROM "+tablename+" ";
+			return (List<Shiyanfenduandata>)qr.query(sql, new BeanListHandler(Shiyanfenduandata.class));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+
+
+}
+
