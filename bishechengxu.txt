@@ -1,0 +1,45 @@
+package com.entity;
+
+public class Alltabledata {
+	private String seno;
+	private String amount;
+	private String rkname;
+	
+	public Alltabledata(String seno, String amount, String rkname) {
+		super();
+		this.seno = seno;
+		this.amount = amount;
+		this.rkname = rkname;
+	}
+	public Alltabledata() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String getSeno() {
+		return seno;
+	}
+	public void setSeno(String seno) {
+		this.seno = seno;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getRkname() {
+		return rkname;
+	}
+	public void setRkname(String rkname) {
+		this.rkname = rkname;
+	}
+	@Override
+	public String toString() {
+		return "ruku [seno=" + seno + ", amount=" + amount + ", rkname="
+				+ rkname + "]";
+	}
+	
+	
+	
+}
+
