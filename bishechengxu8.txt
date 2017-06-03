@@ -66,3 +66,24 @@ public class ShowBottomrukuDaoImpl implements ShowBottomrukuDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+
+import com.dao.show.ShowBottomrukuDao;
+import com.dao.show.ShowBottomrukuDaoImpl;
+
+import com.entity.Bottomrukudata;
+
+public class ShowBottomrukuServiceImpl implements ShowBottomrukuService {
+
+	ShowBottomrukuDao dao = new ShowBottomrukuDaoImpl();
+	public List<Bottomrukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
