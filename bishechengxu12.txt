@@ -1,0 +1,71 @@
+package com.entity;
+
+public class Bottomchukudata {
+	private String cktime;
+	private String ckperson;
+	private String bono;
+	private String amount;
+	private String boname;
+	
+	public Bottomchukudata(String cktime,String ckperson,String bono,String amount,String boname){
+		super();
+		this.cktime=cktime;
+		this.ckperson=ckperson;
+		this.bono=bono;
+		this.amount=amount;
+		this.boname=boname;
+	}
+	
+	public Bottomchukudata(){
+		super();
+	}
+
+	public String getCktime() {
+		return cktime;
+	}
+
+	public void setCktime(String cktime) {
+		this.cktime = cktime;
+	}
+
+	public String getCkperson() {
+		return ckperson;
+	}
+
+	public void setCkperson(String ckperson) {
+		this.ckperson = ckperson;
+	}
+
+	public String getBono() {
+		return bono;
+	}
+
+	public void setBono(String bono) {
+		this.bono = bono;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getBoname() {
+		return boname;
+	}
+
+	public void setBoname(String boname) {
+		this.boname = boname;
+	}
+
+	@Override
+	public String toString() {
+		return "Bottom_view_chuku [cktime=" + cktime + ", ckperson=" + ckperson
+				+ ", bono=" + bono + ", amount=" + amount + ", boname="
+				+ boname + "]";
+	}
+
+}
+
