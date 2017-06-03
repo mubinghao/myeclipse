@@ -43,3 +43,29 @@ public class Alltabledata {
 	
 }
 
+package com.dao.show;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.entity.Alltabledata;
+import com.util.JdbcUtil;
+
+
+public class ShowDataDaoImpl implements ShowDataDao {
+
+
+	public List<Alltabledata> showData(String tablename) {
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			String sql = "SELECT * FROM "+tablename+" where amount !=0 ORDER BY seno";
+			return (List<Alltabledata>)qr.query(sql, new BeanListHandler(Alltabledata.class));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+}
