@@ -141,3 +141,65 @@ public class ShowDeckchukuServiceImpl implements ShowDeckchukuService {
 	}
 }
 
+
+package com.web.show;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.entity.Deckchukudata;
+import com.entity.Deckrukudata;
+import com.service.show.ShowDeckchukuService;
+import com.service.show.ShowDeckchukuServiceImpl;
+import com.service.show.ShowDeckrukuService;
+import com.service.show.ShowDeckrukuServiceImpl;
+
+public class ShowDeckchukuServlet extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.setCharacterEncoding("utf-8");
+		// 数据封装
+	
+		
+		//将用户输入的数据封装到aquery
+		//aquery = WebUtil.copyRequestToBean(request, AdminQuery.class);
+		// 请求头用于防止非法链接
+		String referer = request.getHeader("referer");
+		String tablename = request.getParameter("tablename");
+		
+		// 获取用输入的数据
+		String currentPage = request.getParameter("currentPage");
+		if (currentPage == null || currentPage.equals("")) {
+			// 如果用户第一次访问，没有传递currentPage参数，则当前页为1
+			currentPage = "1";
+		}
+
+		String pageSize = request.getParameter("pageSize");
+		if (pageSize == null || pageSize.equals("")) {
+			pageSize = "5";
+		}
+		ShowDeckchukuService service = new ShowDeckchukuServiceImpl();
+		List<Deckchukudata> declist = service.showData(tablename);
+		System.out.println(declist);
+		//request.setAttribute("pageBean", pageBean);
+		request.setAttribute("declist", declist);
+		request.getRequestDispatcher("/jsp/deckchuku.jsp").forward(request, response);	
+
+			
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+
+	}
+
+
+}
+
