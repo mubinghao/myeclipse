@@ -97,3 +97,21 @@ public class ShowChukuDaoImpl implements ShowChukuDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowChukuDao;
+import com.dao.show.ShowChukuDaoImpl;
+import com.entity.Chukudata;
+
+public class ShowChukuServiceImpl implements ShowChukuService {
+	ShowChukuDao dao = new ShowChukuDaoImpl();
+	public List<Chukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
