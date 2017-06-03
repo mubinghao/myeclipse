@@ -1,0 +1,50 @@
+package com.entity;
+
+public class Fenduanchukudata {
+	private String seno;
+	private String amount;
+	private String zhname;
+	
+	public Fenduanchukudata(String seno,String amount,String zhname){
+		super();
+		this.seno=seno;
+		this.amount=amount;
+		this.zhname=zhname;
+	}
+	
+	public Fenduanchukudata(){
+		super();
+	}
+
+	public String getSeno() {
+		return seno;
+	}
+
+	public void setSeno(String seno) {
+		this.seno = seno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getZhname() {
+		return zhname;
+	}
+
+	public void setZhname(String zhname) {
+		this.zhname = zhname;
+	}
+
+	@Override
+	public String toString() {
+		return "Fenduan_view_chuku [seno=" + seno + ", amount=" + amount
+				+ ", zhname=" + zhname + "]";
+	}
+	
+}
+
