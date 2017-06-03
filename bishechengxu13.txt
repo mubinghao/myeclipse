@@ -1,0 +1,71 @@
+package com.entity;
+
+public class Broadsidechukudata {
+	private String cktime;
+	private String ckperson;
+	private String brno;
+	private String amount;
+	private String brname;
+	
+	public Broadsidechukudata(String cktime,String ckperson,String brno,String amount,String brname){
+		super();
+		this.cktime=cktime;
+		this.ckperson=ckperson;
+		this.brno=brno;
+		this.amount=amount;
+		this.brname=brname;
+	}
+	
+	public Broadsidechukudata(){
+		super();
+	}
+
+	public String getCktime() {
+		return cktime;
+	}
+
+	public void setCktime(String cktime) {
+		this.cktime = cktime;
+	}
+
+	public String getCkperson() {
+		return ckperson;
+	}
+
+	public void setCkperson(String ckperson) {
+		this.ckperson = ckperson;
+	}
+
+	public String getBrno() {
+		return brno;
+	}
+
+	public void setBrno(String brno) {
+		this.brno = brno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getBrname() {
+		return brname;
+	}
+
+	public void setBrname(String brname) {
+		this.brname = brname;
+	}
+
+	@Override
+	public String toString() {
+		return "Broadside_view_chuku [cktime=" + cktime + ", ckperson="
+				+ ckperson + ", brno=" + brno + ", amount=" + amount
+				+ ", brname=" + brname + "]";
+	}
+
+}
+
