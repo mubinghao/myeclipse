@@ -1,0 +1,71 @@
+package com.entity;
+
+public class Deckchukudata {
+	private String cktime;
+	private String ckperson;
+	private String deno;
+	private String amount;
+	private String dename;
+	
+	public Deckchukudata(String cktime,String ckperson,String deno,String amount,String dename){
+		super();
+		this.cktime=cktime;
+		this.ckperson=ckperson;
+		this.deno=deno;
+		this.amount=amount;
+		this.dename=dename;
+	}
+	
+	public Deckchukudata(){
+		super();
+	}
+
+	public String getCktime() {
+		return cktime;
+	}
+
+	public void setCktime(String cktime) {
+		this.cktime = cktime;
+	}
+
+	public String getCkperson() {
+		return ckperson;
+	}
+
+	public void setCkperson(String ckperson) {
+		this.ckperson = ckperson;
+	}
+
+	public String getDeno() {
+		return deno;
+	}
+
+	public void setDeno(String deno) {
+		this.deno = deno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getDename() {
+		return dename;
+	}
+
+	public void setDename(String dename) {
+		this.dename = dename;
+	}
+
+	@Override
+	public String toString() {
+		return "deck_view_chuku [cktime=" + cktime + ", ckperson=" + ckperson
+				+ ", deno=" + deno + ", amount=" + amount + ", dename="
+				+ dename + "]";
+	}
+
+}
+
