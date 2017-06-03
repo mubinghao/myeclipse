@@ -96,3 +96,23 @@ public class ShowBroadsidechukuDaoImpl implements ShowBroadsidechukuDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowBroadsidechukuDao;
+import com.dao.show.ShowBroadsidechukuDaoImpl;
+import com.entity.Broadsidechukudata;
+
+
+public class ShowBroadsidechukuServiceImpl implements ShowBroadsidechukuService {
+
+	ShowBroadsidechukuDao dao = (ShowBroadsidechukuDao) new ShowBroadsidechukuDaoImpl();
+	public List<Broadsidechukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+
+}
+
