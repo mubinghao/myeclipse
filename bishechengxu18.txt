@@ -74,3 +74,25 @@ public class ShowShiyanfenduanDaoImpl implements ShowShiyanfenduanDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowShiyanfenduanDao;
+import com.dao.show.ShowShiyanfenduanDaoImpl;
+
+import com.entity.Shiyanfenduandata;
+
+
+public class ShowShiyanfenduanServiceImpl implements ShowShiyanfenduanService {
+
+
+	ShowShiyanfenduanDao dao = new ShowShiyanfenduanDaoImpl();
+	public List<Shiyanfenduandata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+
+}
+
