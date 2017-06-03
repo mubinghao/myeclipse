@@ -97,3 +97,22 @@ public class ShowBulkheadchukuDaoImpl implements ShowBulkheadchukuDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowBulkheadchukuDao;
+import com.dao.show.ShowBulkheadchukuDaoImpl;
+
+import com.entity.Bulkheadchukudata;
+
+
+public class ShowBulkheadchukuServiceImpl implements ShowBulkheadchukuService {
+
+	ShowBulkheadchukuDao dao = (ShowBulkheadchukuDao) new ShowBulkheadchukuDaoImpl();
+	public List<Bulkheadchukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+}
+
