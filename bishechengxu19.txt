@@ -75,3 +75,24 @@ public class ShowYanfafenduanDaoImpl implements ShowYanfafenduanDao {
 
 }
 
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowYanfafenduanDao;
+import com.dao.show.ShowYanfafenduanDaoImpl;
+import com.dao.show.ShowZhunbeichukuDao;
+import com.dao.show.ShowZhunbeichukuDaoImpl;
+import com.entity.Yanfafenduandata;
+import com.entity.Zhunbeichukudata;
+
+public class ShowYanfafenduanServiceImpl implements ShowYanfafenduanService {
+
+	ShowYanfafenduanDao dao = new ShowYanfafenduanDaoImpl();
+	public List<Yanfafenduandata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
