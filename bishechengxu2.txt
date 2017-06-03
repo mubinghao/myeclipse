@@ -75,3 +75,22 @@ public class ShowDeckDaoImpl implements ShowDeckDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+import com.dao.show.ShowDeckDao;
+import com.dao.show.ShowDeckDaoImpl;
+import com.entity.Deckdata;
+
+public class ShowDeckServiceImpl implements ShowDeckService {
+
+	ShowDeckDao dao = new ShowDeckDaoImpl();
+	public List<Deckdata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+}
+
