@@ -1,0 +1,43 @@
+package com.entity;
+
+public class Bulkheaddata {
+	private String buno;
+	private String amount;
+	private String buname;
+	
+	public Bulkheaddata(String buno, String amount, String buname) {
+		super();
+		this.buno = buno;
+		this.amount = amount;
+		this.buname = buname;
+	}
+	public Bulkheaddata() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String getBuno() {
+		return buno;
+	}
+	public void setBuno(String buno) {
+		this.buno = buno;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getBuname() {
+		return buname;
+	}
+	public void setBuname(String buname) {
+		this.buname = buname;
+	}
+	@Override
+	public String toString() {
+		return "Bulkhead [buno=" + buno + ", amount=" + amount
+				+ ", buname=" + buname + "]";
+	}
+
+}
+
