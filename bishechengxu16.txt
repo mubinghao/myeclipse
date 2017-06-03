@@ -1,0 +1,52 @@
+package com.entity;
+
+public class Shejizhunbeidata {
+	private String seno;
+	private String amount;
+	private String shname;
+	
+	public Shejizhunbeidata(String seno,String amount,String shname){
+		super();
+		this.seno=seno;
+		this.amount=amount;
+		this.shname=shname;
+	}
+	
+	public Shejizhunbeidata(){
+		super();
+	}
+
+	public String getSeno() {
+		return seno;
+	}
+
+	public void setSeno(String seno) {
+		this.seno = seno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	
+
+	public String getShname() {
+		return shname;
+	}
+
+	public void setShname(String shname) {
+		this.shname = shname;
+	}
+
+	@Override
+	public String toString() {
+		return "Sheji_view_zhunbeidata [seno=" + seno + ", amount=" + amount
+				+ ", shname=" + shname + "]";
+	}
+	
+}
+
