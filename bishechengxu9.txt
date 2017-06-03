@@ -66,3 +66,25 @@ public class ShowBroadsiderukuDaoImpl implements ShowBroadsiderukuDao {
 
 }
 
+
+package com.service.show;
+
+import java.util.List;
+
+
+import com.dao.show.ShowBroadsiderukuDao;
+import com.dao.show.ShowBroadsiderukuDaoImpl;
+
+import com.entity.Broadsiderukudata;
+
+public class ShowBroadsiderukuServiceImpl implements ShowBroadsiderukuService {
+
+	ShowBroadsiderukuDao dao = (ShowBroadsiderukuDao) new ShowBroadsiderukuDaoImpl();
+	public List<Broadsiderukudata> showData(String tablename) {	
+		System.out.println(dao.showData(tablename));
+		return dao.showData(tablename);
+	}
+
+
+}
+
