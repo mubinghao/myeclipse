@@ -1,0 +1,50 @@
+package com.entity;
+
+public class Shiyanfenduandata {
+	private String seno;
+	private String amount;
+	private String shname;
+	
+	public Shiyanfenduandata(String seno,String amount,String shname){
+		super();
+		this.seno=seno;
+		this.amount=amount;
+		this.shname=shname;
+	}
+	
+	public Shiyanfenduandata(){
+		super();
+	}
+
+	public String getSeno() {
+		return seno;
+	}
+
+	public void setSeno(String seno) {
+		this.seno = seno;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getShname() {
+		return shname;
+	}
+
+	public void setShname(String shname) {
+		this.shname = shname;
+	}
+
+	@Override
+	public String toString() {
+		return "Shiyan_view_fenduan [seno=" + seno + ", amount=" + amount
+				+ ", shname=" + shname + "]";
+	}
+
+}
+
