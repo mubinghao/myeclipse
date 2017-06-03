@@ -48,3 +48,27 @@ public class Chuangxinzhunbeidata {
 	
 }
 
+package com.dao.show;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import com.entity.Chuangxinzhunbeidata;
+import com.util.JdbcUtil;
+
+public class ShowChuangxinzhunbeiDaoImpl implements ShowChuangxinzhunbeiDao {
+
+	public List<Chuangxinzhunbeidata> showData(String tablename) {
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			String sql = "SELECT * FROM "+tablename+" where amount !=0";
+			return (List<Chuangxinzhunbeidata>)qr.query(sql, new BeanListHandler(Chuangxinzhunbeidata.class));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+}
+
