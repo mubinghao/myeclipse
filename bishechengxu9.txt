@@ -1,0 +1,43 @@
+package com.entity;
+
+public class Broadsiderukudata {
+
+	private String brno;
+	private String amount;
+	private String brname;
+	public Broadsiderukudata(String brno, String amount, String brname) {
+		super();
+		this.brno = brno;
+		this.amount = amount;
+		this.brname = brname;
+	}
+	public Broadsiderukudata() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public String getBrno() {
+		return brno;
+	}
+	public void setBrno(String brno) {
+		this.brno = brno;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getBrname() {
+		return brname;
+	}
+	public void setBrname(String brname) {
+		this.brname = brname;
+	}
+	@Override
+	public String toString() {
+		return "Broadside_ind_ruku [brno=" + brno + ", amount=" + amount
+				+ ", brname=" + brname + "]";
+	}
+}
+
