@@ -1,0 +1,62 @@
+<%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  
+ <title>某船厂钢材公司综合管理系统（消耗材料管理子系统）</title>
+  </head>
+  <style type="text/css">
+
+         .clear{color:blue;
+        }
+          .clear1{color:red;
+        }
+           .clear2{color:green;
+        }
+           .clear3{color:purple;
+        }
+           .clear4{color:black;
+        }
+    </style>
+ <body background="D:\code\Work\WebRoot\jsp\144119tjw0t4b9wwjlkklm.jpg" background-repeat:no-repeat>
+  <h3 class="clear">消耗材料定额管理</h3>
+   
+    <a class="clear4" href="${pageContext.request.contextPath }/ShowDeckServlet?tablename=deck" class="type">查看甲板 </a><br>
+    <a class="clear4" href="${pageContext.request.contextPath }/ShowBroadsideServlet?tablename=broadside" class="type">查看舷侧 </a><br>
+    <a class="clear4" href="${pageContext.request.contextPath }/ShowBottomServlet?tablename=bottom" class="type">查看底部 </a><br>
+    <a class="clear4" href="${pageContext.request.contextPath }/ShowBulkheadServlet?tablename=bulkhead" class="type">查看舱壁 </a>
+ 
+  <h3 class="clear1">消耗材料出库管理</h3>
+ 
+    <a class="clear3" href="${pageContext.request.contextPath }/ShowChukuServlet?tablename=chuku" class="type">出库情况</a><br>
+    <a class="clear3" href="${pageContext.request.contextPath }/ShowDeckchukuServlet?tablename=deck_view_chuku" class="type">甲板出库后的情况</a><br>
+    <a class="clear3" href="${pageContext.request.contextPath }/ShowBulkheadchukuServlet?tablename=bulkhead_view_chuku" class="type">舱壁出库后的情况</a><br>
+    <a class="clear3" href="${pageContext.request.contextPath }/ShowBottomchukuServlet?tablename=bottom_view_chuku" class="type">底部出库后的情况</a><br>
+    <a class="clear3" href="${pageContext.request.contextPath }/ShowBroadsidechukuServlet?tablename=broadside_view_chuku" class="type">舷侧出库后的情况</a>
+  
+  <h3 class="clear2">消耗材料入库管理</h3>
+ 
+    <a class="clear" href="${pageContext.request.contextPath }/ShowDataServlet?tablename=ruku" class="type">查看入库 </a><br>
+    <a class="clear" href="${pageContext.request.contextPath }/ShowDeckrukuServlet?tablename=deck_ind_ruku" class="type">甲板入库后的情况 </a><br>
+    <a class="clear" href="${pageContext.request.contextPath }/ShowBottomrukuServlet?tablename=bottom_ind_ruku" class="type">底部入库后的情况 </a><br>
+    <a class="clear" href="${pageContext.request.contextPath }/ShowBroadsiderukuServlet?tablename=broadside_ind_ruku" class="type">舷侧入库后的情况</a><br>
+    <a class="clear" href="${pageContext.request.contextPath }/ShowBulkheadrukuServlet?tablename=bulkhead_ind_ruku" class="type">舱壁入库后的情况</a>
+ 
+ 
+ <h3 class="clear3">车间领料情况</h3>
+   
+    <a class="clear2" href="${pageContext.request.contextPath }/ShowZhunbeichukuServlet?tablename=zhunbei_view_chuku" class="type">准备车间</a><br>
+    <a class="clear2" href="${pageContext.request.contextPath }/ShowFenduanchukuServlet?tablename=fenduan_view_chuku" class="type">分段车间</a>
+ 
+  <h3 class="clear4">班组消耗材料情况</h3>
+ 
+    <a class="clear1" href="${pageContext.request.contextPath }/ShowShejizhunbeiServlet?tablename=sheji_view_zhunbei" class="type">准备车间的设计组消耗材料情况</a><br>
+    <a class="clear1" href="${pageContext.request.contextPath }/ShowChuangxinzhunbeiServlet?tablename=chuangxin_view_zhunbei" class="type">准备车间的创新组消耗材料情况</a><br>
+    <a class="clear1" href="${pageContext.request.contextPath }/ShowShiyanfenduanServlet?tablename=shiyan_view_fenduan" class="type">分段车间的实验组消耗材料情况</a><br>
+    <a class="clear1" href="${pageContext.request.contextPath }/ShowYanfafenduanServlet?tablename=yanfa_view_fenduan" class="type">分段车间的研发组消耗材料情况</a>
+ </body>
+</html>
+
+
