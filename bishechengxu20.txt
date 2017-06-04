@@ -1,0 +1,45 @@
+<%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <style type="text/css">
+        p{ color:#FFF;   
+        }
+        .clear{color:blue;
+        }
+    </style>
+  <title>某船厂钢材公司综合管理系统（消耗材料管理子系统）</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	</head>
+  <body background="D:\code\Work\WebRoot\jsp\834c9af2d7b02b74a1d9d44b527c53ff.jpg">
+  <script type="text/javascript">
+  function validate(){
+  //得到这两个文本框的内容
+  account = document.loginForm.account.value;
+  password = document.loginForm.password.value;
+  if (account==""){
+    alert("账号不能为空");
+  document.loginForm.account.focus();
+  return;}
+  else if (password==""){
+    alert("密码不能为空")
+   document.loginForm.password.focus();
+   return;}
+   document.loginForm.submit();}
+   </script>
+  <img alt="" src="D:\cod\Work\WebRoot\jsp\834c9af2d7b02b74a1d9d44b527c53ff.jpg" width="100"height="100"border="0"align="middle"/>
+  <p align="center"> 某船厂钢材公司综合管理系统（消耗材料管理子系统）</p>
+  <form name="loginForm" action="${pageContext.request.contextPath }/LoginServlet" method="post">
+ <p align="center"> 输入帐号：<input name="account" type="2013040101219"><br></p>
+ <p align="center">输入密码：<input name="password" type="2013040101219"><br></p>
+<p align="center">
+ <input class="clear" type="reset"   value="清空">
+ <input class="clear" type="button" onclick="validate()" value="登陆"></p>
+  </form>
+</body>
+</html>
